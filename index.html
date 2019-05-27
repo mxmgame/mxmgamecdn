@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=noviewport-fit=cover"><link rel=icon href=/favicon.ico><title>niuniu_poker</title><style>* {
+      box-sizing: border-box;
+    }
+
+    .home {
+      padding-left: env(safe-area-inset-top);
+      padding-right: env(safe-area-inset-bottom);
+      padding-left: constant(safe-area-inset-top);
+      padding-right: constant(safe-area-inset-bottom);
+    }
+
+    * {
+      -webkit-touch-callout: none;
+      /*系统默认菜单被禁用*/
+      -webkit-user-select: none;
+      /*webkit浏览器*/
+      -khtml-user-select: none;
+      /*早期浏览器*/
+      -moz-user-select: none;
+      /*火狐*/
+      -ms-user-select: none;
+      /*IE10*/
+      user-select: none;
+    }</style><script>init();
+
+    function init() {
+      var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        detect = function () {
+          detectOrient();
+        };
+
+      if (!document.addEventListener) return;
+      window.addEventListener(resizeEvt, detect, false);
+      document.addEventListener('DOMContentLoaded', detect, false);
+    }
+
+    function detectOrient() {
+      var cw = document.documentElement.clientWidth;
+      var _Width = 0,
+        _Height = 0;
+
+      sw = window.screen.width;
+      sh = window.screen.height;
+      _Width = sw < sh ? sw : sh;
+      _Height = sw >= sh ? sw : sh;
+
+      if (cw == _Width) {
+        // 竖屏
+        setFont(true);
+        return;
+      }
+      if (cw == _Height) {
+        // 横屏
+        setFont(false);
+        return;
+      }
+    }
+
+    // @ori boolean 屏幕方向，默认竖屏 true
+    function setFont(ori) {
+      var docEl = document.documentElement;
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+
+      //横屏
+      if (!ori) {
+        //  if (clientWidth < 1334) {
+        console.log(clientWidth);
+        if (clientWidth >= 812) {
+          docEl.style.fontSize = '16.983px';
+        } else {
+
+          docEl.style.fontSize = 32 * (clientWidth / 1334) + 'px';
+        }
+        // } else {
+        //     docEl.style.fontSize = '32px';
+        // }
+      } else {
+        //竖屏
+        if (clientWidth < 750) {
+          docEl.style.fontSize = 32 * (clientWidth / 750) + 'px';
+        } else {
+          docEl.style.fontSize = '32px';
+        }
+      }
+    }</script><link href=/css/home.c042ec31.css rel=prefetch><link href=/css/yaoyao.72fc4874.css rel=prefetch><link href=/js/home.db0d65d5.js rel=prefetch><link href=/js/home~yaoyao.05a3525d.js rel=prefetch><link href=/js/yaoyao.8ed6143b.js rel=prefetch><link href=/css/app.6badb08d.css rel=preload as=style><link href=/css/chunk-vendors.91b71fd3.css rel=preload as=style><link href=/js/app.99c0b582.js rel=preload as=script><link href=/js/chunk-vendors.4a32623c.js rel=preload as=script><link href=/css/chunk-vendors.91b71fd3.css rel=stylesheet><link href=/css/app.6badb08d.css rel=stylesheet></head><body><noscript><strong>We're sorry but niuniu_poker doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/js/chunk-vendors.4a32623c.js></script><script src=/js/app.99c0b582.js></script></body></html>
